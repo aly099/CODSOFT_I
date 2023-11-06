@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    int randomNum, guess;
+    srand(time(0));
+    randomNum = rand() % 100 + 1;
+
+    std::cout << "Guess a number between 1 and 100: ";
+
+    do {
+        std::cin >> guess;
+        if (guess > randomNum) {
+            std::cout << "Too high! Try again: ";
+        } else if (guess < randomNum) {
+            std::cout << "Too low! Try again: ";
+        } else {
+            std::cout << "Congratulations! You guessed the correct number.";
+        }
+    } while (guess != randomNum);
+
+    return 0;
+}
